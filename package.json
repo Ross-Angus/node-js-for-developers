@@ -8,7 +8,7 @@
     "sass-prod": "sass --no-source-map --style=compressed src/scss:dist/css",
     "serve": "browser-sync start --server \"dist\" --files \"dist\"",
     "start": "concurrently \"npm run serve\" \"npm run sass-dev\" \"npm run watch-images\"",
-    "prepare": "concurrently \"npm run sass-prod\"",
+    "prepare": "concurrently \"npm run sass-prod\" \"node tools/compress-all-images.js\"",
     "watch-images": "onchange \"src/img\" -- node tools/image-compress.js {{file}} {{event}}"
   },
   "author": "Ross Angus",
