@@ -7,7 +7,7 @@
     "sass-dev": "sass --watch --update --style=expanded src/scss:dist/css",
     "sass-prod": "sass --no-source-map --style=compressed src/scss:dist/css",
     "serve": "browser-sync start --server \"dist\" --files \"dist\"",
-    "start": "concurrently \"npm run serve\" \"npm run sass-dev\"",
+    "start": "concurrently \"npm run serve\" \"npm run sass-dev\" \"npm run watch-images\"",
     "prepare": "concurrently \"npm run sass-prod\"",
     "watch-images": "onchange \"src/img\" -- node tools/image-compress.js {{file}} {{event}}"
   },

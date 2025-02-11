@@ -1,4 +1,6 @@
+import fs from 'node:fs';
 import { argv } from "node:process";
+import { exec } from 'child_process';
 import path from "node:path";
 import sharp from "sharp";
 
@@ -24,8 +26,12 @@ if (triggerEvents.includes(fileEvent)) {
   const fileName = baseName.replace(extName, '');
   const distPath = `./dist${subPath}`;
 
+  !fs.existsSync(distPath) && fs.mkdirSync(distPath, {recursive: true});
+
   sharp(filePath)
     .webp()
     .toFile(`${distPath}/${fileName}.webp`);
 
+  // Call browserSync and force a reload
+  exec('browser-sync reload');
 }
