@@ -17,6 +17,7 @@ export default function getDistPath(filePath) {
   const distPath = `./dist${subPath}`;
   return {
     distPath,
-    fileName
+    fileName,
+    extName
   }
 };
