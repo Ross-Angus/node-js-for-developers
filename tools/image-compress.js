@@ -8,9 +8,5 @@ const triggerEvents = ['add', 'change'];
 
 // If the wrong kind of event triggers this script, do nothing
 if (triggerEvents.includes(fileEvent)) {
-
   writeImages(filePath);
-
-  // Call browserSync and force a reload
-  exec('browser-sync reload');
 }
