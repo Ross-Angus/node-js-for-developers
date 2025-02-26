@@ -1,5 +1,4 @@
 import { argv } from "node:process";
-import browserSync from "browser-sync";
 import getDistPath from "./get-dist-path.js";
 import callPostHTML from "./call-posthtml.js";
 import generateAllHTML from "./generate-all-html.js";
