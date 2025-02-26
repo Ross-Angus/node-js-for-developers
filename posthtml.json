@@ -2,7 +2,8 @@
   "plugins": {
       "posthtml-modules": {
           "root": "./src/views",
-          "initial": true
+          "initial": true,
+          "locals": true
       },
       "htmlnano": {}
   }
